@@ -38,16 +38,31 @@ var arrayTasks = {
 			return valueToRemove !== num;
 		});
 		return removed;
+	},
+
+	findIndexesOf: function (arr, itemToFind) {
+		var findIndex = [];
+	for(var i = 0; i < arr.length; i++){
+			if( arr[i] === itemToFind){
+				findIndex.push(i);
+			}
+		}
+		return findIndex;
+	},
+
+	sumOfAllEvenNumbersSquared: function (arr) {
+		var evenNumbersSquared = 0;
+		for(var i in arr){
+			if(i % 2 === 0){
+				Math.sqrt(i);
+				console.log(i);
+				evenNumbersSquared += i;
+			}
+		}
+
+		return evenNumbersSquared;
 	}
 	
-
-	// findIndexesOf: function (arr, itemToFind) {
-		
-	// },
-
-	// sumOfAllEvenNumbersSquared: function (arr) {
-		
-	// }
 
 }
 
