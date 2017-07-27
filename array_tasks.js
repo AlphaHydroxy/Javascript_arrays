@@ -1,8 +1,7 @@
 var arrayTasks = {
 
 	concat: function (arr1, arr2) {
-		var array3 = arr1.concat(arr2);
-		return array3;
+		return arr1.concat(arr2);
 	},
 
 	insertAt: function (arr, itemToAdd, index) {
@@ -11,17 +10,23 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		return arr.map(function(x){
-			return Math.pow(x, 2);
+		return arr.map(function(item){
+			return Math.pow(item, 2);
 	})
 },
 
+	// sum: function (arr) {
+	// 	var total = 0;
+	// 	for(var i in arr) {
+	// 		total += arr[i]; 
+	// 	}
+	// 	return total;
+	// },
+
 	sum: function (arr) {
-		var total = 0;
-		for(var i in arr) {
-			total += arr[i]; 
-		}
-		return total;
+		return arr.reduce(function(sum, value){
+			return sum + value;
+		})
 	},
 
 	findDuplicates: function (arr) {
@@ -50,20 +55,30 @@ var arrayTasks = {
 		return findIndex;
 	},
 
+	// sumOfAllEvenNumbersSquared: function (arr) {
+	// 	var evenNumbersSquared = 0;
+	// 	for(var i = 0; i < arr.length; i++){
+	// 		if(i % 2 === 0){
+	// 			console.log(i);
+	// 			return i *= i;
+	// 			// Math.sqrt(i);
+	// 			console.log(i);
+	// 			evenNumbersSquared += i;
+	// 		}
+	// 	}
+	// 	return evenNumbersSquared;
+	// }
 	sumOfAllEvenNumbersSquared: function (arr) {
-		var evenNumbersSquared = 0;
-		for(var i in arr){
-			if(i % 2 === 0){
-				Math.sqrt(i);
-				console.log(i);
-				evenNumbersSquared += i;
+		var total = 0;
+		arr.forEach(function(number){
+			if(number % 2 === 0){
+				total += Math.pow(number, 2);
 			}
-		}
-
-		return evenNumbersSquared;
+		})
+		return total;
 	}
-	
 
 }
+
 
 module.exports = arrayTasks;
